@@ -1,0 +1,36 @@
+name: Run Chunithm Scraper
+
+on:
+  workflow_dispatch:
+
+jobs:
+  scraper:
+    runs-on: ubuntu-latest
+    env:
+      DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+      USERNAME:                 ${{ secrets.SCRAPER_USERNAME }}
+      PASSWORD:                 ${{ secrets.SCRAPER_PASSWORD }}
+      VERSION:                  VRS
+      IMAGE_GEN_URL:            https://chuni.wonderhoy.me
+      TZ:                       Asia/Bangkok
+      LANG:                     th_TH.UTF-8
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Prepare outputs directory
+        run: mkdir -p "${{ github.workspace }}/outputs"
+
+      - name: Run Chunithm scraper container
+        run: |
+          docker run --rm \
+            -v "${{ github.workspace }}/outputs":/app/outputs \
+            -e DISCORD_WEBHOOK_URL="${{ env.DISCORD_WEBHOOK_URL }}" \
+            -e USERNAME="${{ env.USERNAME }}" \
+            -e PASSWORD="${{ env.PASSWORD }}" \
+            -e VERSION="${{ env.VERSION }}" \
+            -e IMAGE_GEN_URL="${{ env.IMAGE_GEN_URL }}" \
+            -e TZ="${{ env.TZ }}" \
+            -e LANG="${{ env.LANG }}" \
+            ghcr.io/leomotors/chunithm-scraper:v4
