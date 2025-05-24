@@ -33,4 +33,4 @@ jobs:
             -e IMAGE_GEN_URL="${{ env.IMAGE_GEN_URL }}" \
             -e TZ="${{ env.TZ }}" \
             -e LANG="${{ env.LANG }}" \
-            ghcr.io/leomotors/chunithm-scraper:v4
+            ghcr.io/leomotors/chunithm-scraper:latest
