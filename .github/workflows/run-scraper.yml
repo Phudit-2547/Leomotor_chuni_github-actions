@@ -10,7 +10,7 @@ jobs:
       DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
       USERNAME:                 ${{ secrets.SCRAPER_USERNAME }}
       PASSWORD:                 ${{ secrets.SCRAPER_PASSWORD }}
-      VERSION:                  VRS
+      VERSION:                  XVRS
       IMAGE_GEN_URL:            https://chuni.wonderhoy.me
       TZ:                       Asia/Bangkok
       LANG:                     th_TH.UTF-8
