@@ -11,7 +11,7 @@ jobs:
       USERNAME:                 ${{ secrets.SCRAPER_USERNAME }}
       PASSWORD:                 ${{ secrets.SCRAPER_PASSWORD }}
       VERSION:                  XVRS
-      IMAGE_GEN_URL:            https://chuni.wonderhoy.me
+      CHUNI_SERVICE_URL:            https://chuni.wonderhoy.me
       TZ:                       Asia/Bangkok
       LANG:                     th_TH.UTF-8
 
