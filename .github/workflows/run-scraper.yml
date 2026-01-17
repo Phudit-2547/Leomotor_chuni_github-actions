@@ -30,7 +30,7 @@ jobs:
             -e USERNAME="${{ env.USERNAME }}" \
             -e PASSWORD="${{ env.PASSWORD }}" \
             -e VERSION="${{ env.VERSION }}" \
-            -e CHUNI_SERVICE_URL="${{ env.IMAGE_GEN_URL }}" \
+            -e CHUNI_SERVICE_URL="${{ env.CHUNI_SERVICE_URL }}" \
             -e TZ="${{ env.TZ }}" \
             -e LANG="${{ env.LANG }}" \
             ghcr.io/leomotors/chunithm-scraper:latest
